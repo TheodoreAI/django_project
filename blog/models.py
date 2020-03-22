@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
-
+from django.urls import reverse
 
 
 
@@ -21,3 +21,8 @@ class Post(models.Model):
     def __str__(self):
         """Special method that returns the title of the post"""
         return self.title
+
+    def get_absolute_url(self):
+        """This reverses the url so that a post gets done correctly """
+        return reverse("post-detail", kwargs={"pk": self.pk})
+    

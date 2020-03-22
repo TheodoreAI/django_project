@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'crispy_forms',
     'blog.apps.BlogConfig',
+    'django_cleanup',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -123,6 +124,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# This makes it so the directory with images is efficient: 
+# where our uploaded files will be saved
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'
+
+
 # using bootstrap4 instead of the default
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -132,3 +140,5 @@ LOGIN_REDIRECT_URL = 'blog-home'
 
 # this redirects the login to their profile
 LOGIN_URL = 'login'
+
+
