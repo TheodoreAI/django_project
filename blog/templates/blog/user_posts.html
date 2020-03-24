@@ -1,5 +1,7 @@
 {% extends "blog/base.html"%}
 {% block content %}
+<!-- This tells the User that a certain user has these posts and the num of them  -->
+<h1 class="mb-3">Posts by {{view.kwargs.username}} ({{page_obj.paginator.count}})</h1>
 <!-- this for loop posts the posts one at a time -->
 <main>
   <div class='container'>

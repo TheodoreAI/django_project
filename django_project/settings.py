@@ -142,3 +142,18 @@ LOGIN_REDIRECT_URL = 'blog-home'
 LOGIN_URL = 'login'
 
 
+# this will set up the email
+
+EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True 
+EMAIL_HOST_USER = os.environ.get('db_user')
+EMAIL_HOST_PASSWORD = os.environ.get('db_pass')
+
+# to hide the info
+
+db_user = os.environ.get('db_user')
+db_password = os.environ.get('db_pass')
+
+print(db_user, db_password)
