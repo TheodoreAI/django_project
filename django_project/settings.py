@@ -158,4 +158,3 @@ EMAIL_HOST_PASSWORD = os.environ.get('db_pass')
 db_user = os.environ.get('db_user')
 db_password = os.environ.get('db_pass')
 
-print(db_user, db_password)
