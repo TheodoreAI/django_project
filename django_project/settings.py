@@ -20,12 +20,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'rp4w&o9urzb)3j+__de0f#%3q_8sz^t#f_^c6es*%0teag2@n5'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['bitbrane.herokuapp.com']
 
 
 # Application definition: remember to add applications everytime a new app is made
@@ -154,7 +155,6 @@ EMAIL_HOST_USER = os.environ.get('db_user')
 EMAIL_HOST_PASSWORD = os.environ.get('db_pass')
 
 # to hide the info
-
 db_user = os.environ.get('db_user')
 db_password = os.environ.get('db_pass')
 
