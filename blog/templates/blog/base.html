@@ -28,7 +28,7 @@
     <!-- ALl credit to Corey S. on this nav bar:-->
     <!-- You can change the links using the code:  -->
     <header class="site-header">
-        <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
           <div class="container">
             <a class="navbar-brand mr-4" href="{% url 'blog-home'%}">BitBrane </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +38,8 @@
               <div class="navbar-nav mr-auto">
                 <a class="nav-item nav-link" href="{% url 'blog-home'%}">Home</a>
                 <a class="nav-item nav-link" href="{% url 'blog-about'%}">About</a>
+                <a class="nav-item nav-link" href="{% url 'project_index' %}">Portfolio</a>
+
               </div>
               <!-- Navbar Right Side -->
               <!-- Will add the Login and Register pages here -->
@@ -47,11 +49,14 @@
                 <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
                 <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
-                
+{#                    remember that you need to add this to the public section once this is identicated#}
+                <a class="nav-item nav-link" href="{% url 'contact' %}">Contact</a>
+
                 {% else %}
                 <!-- When the user's are not logged in then they can only do this -->
                 <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
                 <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+
                 {% endif %}
               </div>
             </div>
@@ -83,7 +88,9 @@
             
 
           </div>
+           {% block sidebar %}
           <div class="col-md-4">
+
             <div class="content-section">
               <h3>Our Sidebar</h3>
               <p class='text-muted'>You can put any information here you'd like.
@@ -95,14 +102,90 @@
                 </ul>
               </p>
             </div>
+
           </div>
+           {% endblock %}
         </div>
       </main>
-    <!-- Optional JavaScript -->
+
+
+
+
+
+    {% block footer %}
+    <footer id="footer" >
+        <div class="main-footer widgets-dark typo-light">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget subscribe no-box">
+                            <h5 class="widget-title">BitBrane<span></span></h5>
+                            <p>Welcome to BitBrane, where you can learn some programming in English and Spanish from the tutorials I have used
+                            in order to learn programming.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget no-box">
+                            <h5 class="widget-title">Quick Links<span></span></h5>
+                            <ul class="thumbnail-widget">
+                                <li>
+                                    <div class="thumb-content"><a href="#.">Get Started</a></div>
+                                </li>
+                                <li>
+                                    <div class="thumb-content"><a href="#.">Success Stories</a></div>
+                                </li>
+                                <li>
+                                    <div class="thumb-content"><a href="#.">News</a></div>
+                                </li>
+                                <li>
+                                    <div class="thumb-content"><a href="#.">About</a></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget no-box">
+                            <h5 class="widget-title">Get Started<span></span></h5>
+                            <p>Get access to your full Training and Marketing Suite.</p>
+                            <button name="top" style="color: dodgerblue">Register Now</button>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+
+                        <div class="widget no-box">
+                            <h5 class="widget-title">Contact Us<span></span></h5>
+
+                            <p><a href="mailto:info@domain.com" title="glorythemes">info@domain.com</a></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>Copyright Company Name © 2016. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    {% endblock %}
+
+
+
+
+   <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-</body>
 </html>

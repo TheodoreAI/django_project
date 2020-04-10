@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from PIL import Image
 
 
-
 # Add your models here.
 
 class Profile(models.Model):

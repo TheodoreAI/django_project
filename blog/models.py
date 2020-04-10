@@ -11,6 +11,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     # unrestricted test field for how long they wanna make it
     content = models.TextField()
+
     # when the post was created passing the function (now without the parenetheses) as default value
     date_posted = models.DateTimeField(default=timezone.now)    
 
@@ -25,4 +26,18 @@ class Post(models.Model):
     def get_absolute_url(self):
         """This reverses the url so that a post gets done correctly """
         return reverse("post-detail", kwargs={"pk": self.pk})
-    
+
+
+
+class Category(models.Model):
+    name = models.CharField(max_length=50)
+
+
+
+class Comment(models.Model):
+    author = models.CharField(max_length=100)
+    body = models.TextField()
+    date_posted = models.DateTimeField(auto_now_add=True)
+    post = models.ForeignKey('Post', on_delete=models.CASCADE)
+
+
