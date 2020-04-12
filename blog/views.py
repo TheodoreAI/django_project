@@ -10,22 +10,6 @@ from .models import Post
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 
-# list of dictionaries for blog content
-posts = [
-    {
-        'author': 'Joe Goldberg',
-        'title': 'Blog post 1',
-        'content': 'first post content',
-        'date_posted': 'March 20, 2020'
-    },
-    {
-        'author': 'Max Paine',
-        'title': 'Blog post 2',
-        'content': 'second post content',
-        'date_posted': 'March 19, 2020'
-    }
-]
-
 
 # Create your views here.
 def home(request):
