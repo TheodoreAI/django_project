@@ -15,7 +15,7 @@ def project_index(request):
         'projects': projects
 
     }
-    return render(request, 'project_index.html', context)
+    return render(request, 'projects/project_index.html', context)
 
 
 
@@ -28,11 +28,11 @@ def project_detail(request, pk):
         'project': project
 
     }
-    return render(request, 'project_detail.html', context)
+    return render(request, 'projects/project_detail.html', context)
 
 
 def contact(request):
     form_class = ContactForm
-    return render(request, 'contact.html', {'form': form_class})
+    return render(request, 'projects/contact.html', {'form': form_class})
 
 
