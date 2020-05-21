@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import django_heroku 
+import django_heroku
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = (os.environ.get('DEBUG_VALUE') == 'TRUE')
 
 
-ALLOWED_HOSTS = ['bitbrane.herokuapp.com']
+ALLOWED_HOSTS = ['https://bitbrane.herokuapp.com/']
 
 
 # Application definition: remember to add applications everytime a new app is made
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'projects',
+    'storages'
 
     
 ]
@@ -161,5 +162,19 @@ EMAIL_HOST_PASSWORD = os.environ.get('db_pass')
 # to hide the info
 db_user = os.environ.get('db_user')
 db_password = os.environ.get('db_pass')
+
+# This is the env variables for accessing the AWS files bucket
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+
+
+# prevents user overwrite for other users that would upload the same file name
+AWS_S3_FILE_OVERWRITE = False
+# can cause issues (what kind?)
+AWS_DEFAULT_ACL = None
+#
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 
 django_heroku.settings(locals())

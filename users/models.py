@@ -19,13 +19,13 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.username} Profile'
 
-    def save(self, *args, **kawrgs):
-        """ This method is used to resize the uploaded images """
-        super().save(*args, **kawrgs)
-
-        # this object will resize the photos/ could be done with a template that makes it more efficient
-        img = Image.open(self.image.path)
-        if img.height > 300 or img.width > 300:
-            output_size = (400, 400)
-            img.thumbnail(output_size)
-            img.save(self.image.path)
+    # def save(self, *args, **kawrgs):
+    #     """ This method is used to resize the uploaded images """
+    #     super().save(*args, **kawrgs)
+    #
+    # this object will resize the photos/ could be done with a template that makes it more efficient
+    #     img = Image.open(self.image.path)
+    #     if img.height > 300 or img.width > 300:
+    #         output_size = (400, 400)
+    #         img.thumbnail(output_size)
+    #         img.save(self.image.path)
