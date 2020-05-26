@@ -1,14 +1,11 @@
 from django.urls import path
-from .views import (
-
-)
 
 from . import views
 
-
+# will add stuff to this for adding the projects to the admin page
 
 urlpatterns = [
-    path("", views.project_index, name="project_index"),
+    path("project_index/", views.project_index, name="project_index"),
     path("<int:pk>/", views.project_detail, name="project_detail"),
     path('contact/', views.contact, name="contact"),
 

@@ -51,7 +51,7 @@ urlpatterns = [
 
     path('', include('blog.urls')),
 
-    path('projects/', include('projects.urls'))
+    path('', include('projects.urls'))
 
 ]
 

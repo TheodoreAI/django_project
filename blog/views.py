@@ -93,11 +93,6 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             return True
         return False
 
-
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})
 
-
-# def login(request):
-#     """This is used to add the login.html file (rwk)"""
-#     return render(request, 'blog/login.html', {'title': 'Login'})
