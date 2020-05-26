@@ -1,4 +1,4 @@
-web: gunicorn bitbrane.wsgi
+web: gunicorn django_project.wsgi
 
 
 
