@@ -21,10 +21,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = (os.environ.get('DEBUG_VALUE') == 'TRUE')
+DEBUG = (os.environ['DEBUG_VALUE'] == 'TRUE')
 
 
 ALLOWED_HOSTS = ['https://bitbrane.herokuapp.com/']
@@ -153,17 +153,17 @@ EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True 
-EMAIL_HOST_USER = os.environ.get('db_user')
-EMAIL_HOST_PASSWORD = os.environ.get('db_pass')
+EMAIL_HOST_USER = os.environ['db_user']
+EMAIL_HOST_PASSWORD = os.environ['db_pass']
 
 # to hide the info
-db_user = os.environ.get('db_user')
-db_password = os.environ.get('db_pass')
+db_user = os.environ['db_user']
+db_password = os.environ['db_pass']
 
 # This is the env variables for accessing the AWS files bucket
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
 
 # prevents user overwrite for other users that would upload the same file name
 AWS_S3_FILE_OVERWRITE = False
