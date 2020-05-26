@@ -6,7 +6,6 @@ from django.urls import reverse
 
 
 class Post(models.Model):
-
     # field of post table; has a restriction of 100 characters
     title = models.CharField(max_length=100)
     # unrestricted test field for how long they wanna make it
@@ -28,10 +27,8 @@ class Post(models.Model):
         return reverse("post-detail", kwargs={"pk": self.pk})
 
 
-
 class Category(models.Model):
     name = models.CharField(max_length=50)
-
 
 
 class Comment(models.Model):

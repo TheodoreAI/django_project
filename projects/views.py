@@ -18,7 +18,6 @@ def project_index(request):
     return render(request, 'projects/project_index.html', context)
 
 
-
 def project_detail(request, pk):
     """
     This query retrieves the project with the primary key, pk, equal to that in the function argument.
