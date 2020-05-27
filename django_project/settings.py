@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import django_heroku
-
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = (os.environ.get('DEBUG_VALUE') == 'TRUE')
 
 
-ALLOWED_HOSTS = ['https://bitbrane.herokuapp.com/']
+ALLOWED_HOSTS = []
 
 
 # Application definition: remember to add applications everytime a new app is made
@@ -45,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'projects.apps.ProjectsConfig',
-    'storages',
+   
 ]
 
 MIDDLEWARE = [
@@ -162,17 +160,17 @@ db_user = os.environ.get('db_user')
 db_password = os.environ.get('db_pass')
 
 # This is the env variables for accessing the AWS files bucket
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
-
-
-# prevents user overwrite for other users that would upload the same file name
-AWS_S3_FILE_OVERWRITE = False
-# can cause issues (what kind?)
-AWS_DEFAULT_ACL = None
+# AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+# AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+# AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 #
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# to allow django-admin.py collectstatic to automatically put static files in bucket
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-django_heroku.settings(locals())
+#
+# # prevents user overwrite for other users that would upload the same file name
+# AWS_S3_FILE_OVERWRITE = False
+# # can cause issues (what kind?)
+# AWS_DEFAULT_ACL = None
+# #
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# # to allow django-admin.py collectstatic to automatically put static files in bucket
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# django_heroku.settings(locals())
