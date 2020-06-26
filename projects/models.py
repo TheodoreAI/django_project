@@ -1,5 +1,4 @@
 from django.db import models
-from django import forms
 
 
 # Create your models here.
@@ -8,12 +7,10 @@ class Project(models.Model):
     description = models.TextField()
     technology = models.CharField(max_length=150)
     image = models.ImageField(default='default.jpg', upload_to='project_pics')
+    link = models.CharField(max_length=100, default="#")
 
 
-class ContactForm(forms.Form):
-    contact_name = forms.CharField(required=True)
-    contact_email = forms.EmailField(required=True)
-    content = forms.CharField(
-        required=True,
-        widget=forms.Textarea
-    )
+class Contact(models.Model):
+    contact_name = models.CharField(max_length=100)
+    contact_email = models.EmailField(max_length=100)
+    content = models.TextField(max_length=300)

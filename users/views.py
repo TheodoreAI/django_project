@@ -23,14 +23,10 @@ def register(request):
         else:
             # if the form is not valid
             messages.error(request, f'Account failed to create, please try again!')
-            return render(request, 'users/register.html',{'form': form})
-            
+            return render(request, 'users/register.html',{'form': form})   
     else:
         form = UserRegisterForm()
     return render(request, 'users/register.html', {'form': form})
-
-
-
 
 @login_required
 def profile(request):

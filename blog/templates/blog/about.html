@@ -1,11 +1,41 @@
+{% extends "blog/base.html" %}
 
-{% extends "blog/base.html"%}
 {% block content %}
-    <h1>About Page</h1> 
-    <p>Welcome to BitBrane.com
-        The future is yours.
-        Just sign up, if you would like to learn more about Django, Express, Javascript and more!
-        You will be a pioneer in becoming part of this stable Industry.
-        In difficult times we must physically distance ourselves, but not from your products and services.
-    </p>
+    <script src="https://use.fontawesome.com/5ee8efa01f.js"></script>
+    {% for about in about %}
+        <h1>About Page</h1>
+        <h5>{{ about.name }}</h5>
+        <p>
+            </br>
+            <em> Collaboration, Development, Design, Freelance, and blogging.</em>
+        </p>
+        <row>
+        <div>
+        <!-- need to add an admin functionality to change this: -->
+        <img class="rounded-circle account-img" src="{{ about.image.url }}">
+        <h5><b>About Bitbrane: </b></h5>
+        <p>
+            {{ about.about }}
+        </p>
+        <h6>To learn more about projects done by me check out: <a class="nav-item nav-link"
+                                                                  href="{% url 'project_index' %}">
+            Portfolio</a></h6>
+    {% endfor %}
+</div>
+<h5><b>Social Media</b></h5>
+<a href="#">
+    <i class="fa fa-twitter fa-2x" aria-hidden="true">
+    </i>
+</a>
+<a href="https://www.youtube.com/channel/UCqBmGk8Wanpl94K-XsF9vjw?view_as=subscriber">
+    <i class="fa fa-youtube-square fa-2x" aria-hidden="true"></i>
+</a>
+<a href="instagram.com">
+    <i class="fa fa-instagram fa-2x" aria-hidden='true'></i>
+</a>
+<a href="https://www.linkedin.com/in/mej1323/">
+    <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+</a>
+</row>
+
 {% endblock content %}

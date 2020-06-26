@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from projects.models import Project
-from projects.models import ContactForm
-
-
+from projects.forms import ContactForm
+from django.contrib import messages
+from django.http import Http404
 # Create your views here.
 
 
@@ -30,8 +30,15 @@ def project_detail(request, pk):
     return render(request, 'projects/project_detail.html', context)
 
 
+
 def contact(request):
-    form_class = ContactForm
-    return render(request, 'projects/contact.html', {'form': form_class})
+    form = ContactForm(request.POST)
+    if form.is_valid():
+
+        form.save()
+        messages.success(request, f'Your message has been sent!')
+        return redirect('blog-home')
+
+    return render(request, 'projects/contact.html', {'form': form})
 
 

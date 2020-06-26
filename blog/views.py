@@ -9,13 +9,14 @@ from django.views.generic import (
 from .models import Post
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
+from .forms import AboutUpdateForm
+from .models import About
 
 
 # Create your views here.
 def home(request):
     """Passes info into the template"""
 
-    # dict
     context = {
         'posts': Post.objects.all()
     }
@@ -46,6 +47,7 @@ class UserPostListView(ListView):
         """ if the username exists then it will limit the results to that user"""
         user = get_object_or_404(User, username=self.kwargs.get('username'))
         return Post.objects.filter(author=user).order_by("-date_posted")
+
 
 class PostDetailView(DetailView):
     model = Post
@@ -92,6 +94,9 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             return True
         return False
 
-def about(request):
-    return render(request, 'blog/about.html', {'title': 'About'})
 
+def about(request):
+    context = {
+        'about': About.objects.all()
+    }
+    return render(request, 'blog/about.html', context)
