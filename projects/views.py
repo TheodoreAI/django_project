@@ -3,6 +3,8 @@ from projects.models import Project
 from projects.forms import ContactForm
 from django.contrib import messages
 from django.http import Http404
+
+
 # Create your views here.
 
 
@@ -28,7 +30,6 @@ def project_detail(request, pk):
 
     }
     return render(request, 'projects/project_detail.html', context)
-
 
 
 def contact(request):
