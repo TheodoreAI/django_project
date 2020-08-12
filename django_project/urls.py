@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from users import views as user_views
+from projects import views as project_views
 from django.contrib.auth import views as auth_views
 
 
@@ -24,6 +25,8 @@ from django.conf.urls.static import static
 
 # Change patterns here for the urls to change direction
 urlpatterns = [
+    path('project/', project_views.project, name='project'),
+
     path('admin/', admin.site.urls),
 
     path('register/', user_views.register, name='register'),

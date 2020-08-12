@@ -11,7 +11,7 @@ class Post(models.Model):
     # unrestricted test field for how long they wanna make it
     content = models.TextField()
 
-    # when the post was created passing the function (now without the parenetheses) as default value
+    # when the post was created passing the function (now without the parentheses) as default value
     date_posted = models.DateTimeField(default=timezone.now)
 
     # another one for the author to delete the user's content when their account is deleted

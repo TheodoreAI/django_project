@@ -15,8 +15,6 @@
     <!-- including main.css -->
     <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
 
-
-
     {% if title %}
         <title>BitBrane Blog - {{ title }}</title>
     {% else %}
@@ -37,8 +35,8 @@
             <div class="collapse navbar-collapse" id="navbarToggle">
                 <div class="navbar-nav mr-auto">
                     <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
-                    <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
-                    <a class="nav-item nav-link" href="{% url 'project_index' %}">Portfolio</a>
+{#                    <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>#}
+                    <a class="nav-item nav-link" href="{% url 'project'%}">Projects</a>
                 </div>
                 <!-- Navbar Right Side -->
                 <!-- Will add the Login and Register pages here -->
@@ -46,6 +44,7 @@
                     {% if user.is_authenticated %}
                         <!-- Only let the user's see this when they are logged in-->
                         <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
+                        <a class="nav-item nav-link" href="{% url 'project-create' %}">New Project</a>
                         <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
                         <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
                         {#                    remember that you need to add this to the public section once this is identicated#}
@@ -88,31 +87,15 @@
 
             <!--  </div>
            {% block sidebar %}
-          <div class="col-md-4">
 
-            <div class="content-section">
-              <h3>Sidebar</h3>
-              <p class='text-muted'>Extra resources at your disposal
-                <ul class="list-group">
-                  <li class="list-group-item list-group-item-light">Latest Posts</li>
-                  <li class="list-group-item list-group-item-light">Announcements</li>
-                  <li class="list-group-item list-group-item-light">Calendars</li>
-                  <li class="list-group-item list-group-item-light">What is trending</li>
-                </ul>
-              </p>
-            </div>
-
-          </div>
            {% endblock %}
         </div> -->
-</main>
-<br>
+</main><br><br>
 {% block footer %}
-    <footer id="footer">
+    <footer class="footer">
         <div class="main-footer widgets-dark typo-light">
             <div class="container">
                 <div class="row">
-
                     <div class="col-xs-12 col-sm-6 col-md-3">
                         <div class="widget subscribe no-box">
                             <h5 class="widget-title">BitBrane<span></span></h5>

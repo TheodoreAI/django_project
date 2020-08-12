@@ -5,7 +5,6 @@ from django.contrib.auth.decorators import login_required
 
 
 # Add to your create your views here.
-
 #i need to post the data here 
 # this is used to accept the new info from the login form from the user
 def register(request):
@@ -27,6 +26,7 @@ def register(request):
     else:
         form = UserRegisterForm()
     return render(request, 'users/register.html', {'form': form})
+
 
 @login_required
 def profile(request):

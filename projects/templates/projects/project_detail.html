@@ -1,20 +1,29 @@
 {% extends "blog/base.html" %}
 
-{% block sidebar %}{%  endblock %}
+{% block sidebar %}{% endblock %}
 {% block content %}
-<h1>{{ project.title }}</h1>
-<div class="row">
-    <div class="col-md-8">
-        <img src="{{ project.image.url }}" alt="" width="100%">
+    <h2>{{ project.title }}</h2>
+    {% if project.author == user %}
+        <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'project-update' object.id %}"> Update</a>
+            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'project-delete' object.id %}"> Delete</a>
+        </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-md-8">
+            <img src="{{ project.image.url }}" alt="" width="100%">
+        </div>
+        <div class="col-md-4">
+            <h5>About the project:</h5>
+            <p>{{ project.description }}</p>
+            <h5>Projects by the author:</h5>
+            <a class="mr-2"
+               href="{% url 'user-projects' project.author.username %}"><span>{{ project.author }}</span></a><br>
+            <br>
+            <h5>Technology used:</h5>
+            <p>{{ project.technology }}</p>
+            <h5>You can find it below:</h5>
+            <p><a href="{{ project.link }}">{{ project.title }}</a></p>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h5>About the project:</h5>
-        <p>{{ project.description }}</p>
-        <br>
-        <h5>Technology used:</h5>
-        <p>{{ project.technology }}</p>
-        <h5>You can find it below:</h5>
-        <p><a href="{{ project.link }}">RwkArts</a></p>
-    </div>
-</div>
 {% endblock %}

@@ -8,6 +8,7 @@ from .views import (
     UserPostListView)
 from . import views 
 
+
 # This is used to add the urls to the app 'blog' 
 urlpatterns = [
     path('', PostListView.as_view(), name='blog-home'),

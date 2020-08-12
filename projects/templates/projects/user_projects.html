@@ -1,21 +1,23 @@
 {% extends "blog/base.html"%}
 {% block content %}
+<!-- This tells the User that a certain user has these posts and the num of them  -->
+<h4 class="mb-3">Projects by {{view.kwargs.username}} ({{page_obj.paginator.count}})</h4>
 <!-- this for loop posts the posts one at a time -->
 <main>
   <div class='container'>
-    {%for post in posts %}
+    {%for project in projects %}
     <article class="media content-section">
       <!-- This will be the images of the profiles -->
-      <img class="rounded article-img" src="{{post.author.profile.image.url}}">
+      <img class="rounded article-img" src="{{project.author.profile.image.url}}">
       <div class="media-body">
         <div class="article-metadata">
-          <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+          <a class="mr-2" href="{% url 'user-projects' project.author.username %}">{{ project.author }}</a>
           <!-- still has the specific time: change it here -->
-          <small class="text-muted">{{ post.date_posted }}</small>
+          <small class="text-muted">{{ project.date_posted }}</small>
         </div>
         <!-- This is the link to the blog posts -->
-        <h2><a class="article-title" href="{% url 'post-detail' post.id%}">{{ post.title }}</a></h2>
-        <p class="article-content">{{ post.content }}</p>
+        <h2><a class="article-title" href="{% url 'project-detail' project.id%}">{{ project.title }}</a></h2>
+        <p class="article-content">{{ project.content }}</p>
       </div>
     </article>
     {% endfor %}
@@ -24,13 +26,17 @@
         <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
         <a class="btn btn-outline-info mb-4" href="?page={{page_obj.previous_page_number}}">Previous</a>
       {% endif %}
+
       {% for num in page_obj.paginator.page_range%}
+
         {% if page_obj.number == num %}
           <a class="btn btn-outline-info mb-4" href="?page={{num}}">{{num}}</a>
         {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
           <a class="btn btn-outline-info mb-4" href="?page={{num}}">{{num}}</a>
         {% endif%}
+
       {% endfor%}
+
       {% if page_obj.has_next %}
         <a class="btn btn-outline-info mb-4" href="?page={{page_obj.next_page_number}}">Next</a>
         <a class="btn btn-outline-info mb-4" href="?page={{page_obj.paginator.num_pages}}">Last</a>
@@ -38,4 +44,4 @@
     {% endif %}
   </div>
 </main>
-{% endblock %}
+{% endblock content %}
