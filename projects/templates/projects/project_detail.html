@@ -17,13 +17,12 @@
             <h5>About the project:</h5>
             <p>{{ project.description }}</p>
             <h5>Projects by the author:</h5>
-            <a class="mr-2"
-               href="{% url 'user-projects' project.author.username %}"><span>{{ project.author }}</span></a><br>
+            <a id="general-buttons" href="{% url 'user-projects' project.author.username %}"><span>{{ project.author }}</span></a><br>
             <br>
             <h5>Technology used:</h5>
             <p>{{ project.technology }}</p>
             <h5>You can find it below:</h5>
-            <p><a href="{{ project.link }}">{{ project.title }}</a></p>
+            <p><a id="general-buttons" href="{{ project.link }}">{{ project.title }}</a></p>
         </div>
     </div>
 {% endblock %}

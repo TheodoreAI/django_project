@@ -1,3 +1,13 @@
+#general-buttons {
+    font: arial;
+    font-weight: bold;
+    font-size: large;
+}
+#bootstrap-overrides general-buttons {
+    
+}
+
+
 .tab {
     tab-size: 2;
 }

@@ -35,7 +35,7 @@
             <div class="collapse navbar-collapse" id="navbarToggle">
                 <div class="navbar-nav mr-auto">
                     <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
-{#                    <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>#}
+                    <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
                     <a class="nav-item nav-link" href="{% url 'project'%}">Projects</a>
                 </div>
                 <!-- Navbar Right Side -->
@@ -108,11 +108,11 @@
                             <h5 class="widget-title">Social Media<span></span></h5>
                             <ul class="thumbnail-widget">
                                 <li>
-                                    <div class="thumb-content"><a href="https://www.linkedin.com/in/mej1323/">
+                                    <div class="thumb-content"><a id="general-buttons" href="https://www.linkedin.com/in/mej1323/">
                                         LinkedIn</a></div>
                                 </li>
                                 <li>
-                                    <div class="thumb-content"><a
+                                    <div class="thumb-content"><a id="general-buttons"
                                             href="https://www.youtube.com/channel/UCqBmGk8Wanpl94K-XsF9vjw?view_as=subscriber">Youtube</a>
                                     </div>
                                 </li>
@@ -133,7 +133,7 @@
                         <div class="widget no-box">
                             <h5 class="widget-title">Contact Me<span></span></h5>
 
-                            <p><a href="{% url 'contact' %}" title="glorythemes">Start Now</a></p>
+                            <p><a id="general-buttons" href="{% url 'contact' %}" title="glorythemes">Start Now</a></p>
                         </div>
                     </div>
 
