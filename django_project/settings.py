@@ -26,7 +26,7 @@ SECRET_KEY = 'kjahsfpui[3488978798709879%%728376(**'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['198.74.49.197', '127.0.0.1']
+ALLOWED_HOSTS = ['198.74.49.197', '127.0.0.1', 'https://bitbrane.herokuapp.com/']
 
 
 # Application definition: remember to add applications everytime a new app is made
