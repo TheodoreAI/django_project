@@ -103,9 +103,7 @@ a.article-title:hover {
 ====================== */
 
 /* Main Footer */
-* {
-    box-sizing: border-box;
-}
+
 
 *:before,
 *:after {
@@ -129,9 +127,7 @@ body {
 .footer {
     position: relative;
     background: lightblue;
-    bottom: 0;
-    width: 100%;
-    height: 120px;
+    
     margin: auto;
     opacity: 90%;
 

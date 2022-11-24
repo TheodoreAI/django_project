@@ -92,18 +92,20 @@
         </div> -->
 </main><br><br>
 {% block footer %}
-    <footer class="footer">
-        <div class="main-footer widgets-dark typo-light">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-                        <div class="widget subscribe no-box">
-                            <h5 class="widget-title">BitBrane<span></span></h5>
-                            <p>Welcome to BitBrane!
-                            </p>
+    <div class="navbar fixed-bottom footer ">
+        
+        <div class="container">
+            <div class="footer-copyright">
+                <div class="">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <p>Copyright Bitbrane © 2020-Current. All rights reserved.</p>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3">
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-4">
                         <div class="widget no-box">
                             <h5 class="widget-title">Social Media<span></span></h5>
                             <ul class="thumbnail-widget">
@@ -121,36 +123,23 @@
                             </ul>
                         </div>
                     </div>
-
-                    <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="col-4">
                         <div class="widget no-box">
                             <h5 class="widget-title">Get Started<span></span></h5>
                             <p>Sign up to collaborate!</p>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-
+                    <div class="col-4">
                         <div class="widget no-box">
                             <h5 class="widget-title">Contact Me<span></span></h5>
-
                             <p><a id="general-buttons" href="{% url 'contact' %}" title="glorythemes">Start Now</a></p>
                         </div>
                     </div>
-
-                </div>
             </div>
+            
         </div>
-
-        <div class="footer-copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <p>Copyright Bitbrane © 2020. All rights reserved.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+        
+    </div>
 {% endblock %}
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
