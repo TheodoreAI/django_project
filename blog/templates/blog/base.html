@@ -66,7 +66,7 @@
 <main role="main" class="container">
     <div class="row">
         <div class="col-md-8">
-            <!-- this adds the message that a user was created succesfully -->
+            <!-- this adds the message that a user was created successfully -->
             {% if messages %}
                 {% for message in messages %}
                     <div class="alert alert-{{ message.tags }}">
@@ -82,18 +82,10 @@
                         {{ message }}
                     </div>
                 {% endfor %}
-            {% endif %}
-
-
-            <!--  </div>
-           {% block sidebar %}
-
-           {% endblock %}
-        </div> -->
-</main><br><br>
+            {% endif %}          
+</main>
 {% block footer %}
-    <div class="navbar fixed-bottom footer ">
-        
+    <div class="footer fixed-bottom ">
         <div class="container">
             <div class="footer-copyright">
                 <div class="">
@@ -108,7 +100,7 @@
                     <div class="col-4">
                         <div class="widget no-box">
                             <h5 class="widget-title">Social Media<span></span></h5>
-                            <ul class="thumbnail-widget">
+                            <ul style="list-style: none;">
                                 <li>
                                     <div class="thumb-content"><a id="general-buttons" href="https://www.linkedin.com/in/mej1323/">
                                         LinkedIn</a></div>
